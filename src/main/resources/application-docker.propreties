@@ -1,7 +1,21 @@
+
 spring.datasource.url=${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/banking_system}
 spring.datasource.username=${SPRING_DATASOURCE_USERNAME:root}
 spring.datasource.password=${SPRING_DATASOURCE_PASSWORD:password}
 
+spring.datasource.url=${spring.datasource.url}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=false
-spring.thymeleaf.cache=false
+spring.jpa.properties.hibernate.format_sql=false
+
+spring.datasource.hikari.maximum-pool-size=15
+spring.datasource.hikari.minimum-idle=5
+
+spring.thymeleaf.cache=false      
+
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+logging.file.name=
+
+management.endpoints.web.exposure.include=health,info
+management.endpoint.health.show-details=always
