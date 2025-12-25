@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: securebank
+    env: docker
+    plan: free
+    region: frankfurt  
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DATABASE_URL
+        fromDatabase:
+          name: securebank-db
+          property: connectionString
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_JPA_SHOW_SQL
+        value: "false"
+      - key: SPRING_THYMELEAF_CACHE
+        value: "true"
+
+databases:
+  - name: securebank-db
+    plan: free
+    databaseName: banking_system
+    region: oregon
