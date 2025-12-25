@@ -1,0 +1,57 @@
+Database Setup Guide
+---------------------------------
+
+Database Name:      banking_system
+Default Username:   root
+Default Password:   password  (change if you set a custom password)
+
+--------------------------
+Windows - Setup Commands:
+--------------------------
+1️⃣ Open Command Prompt (CMD)
+2️⃣ Enter MySQL shell:
+    mysql -u root -p
+
+3️⃣ Inside MySQL, execute:
+    CREATE DATABASE banking_system;
+    GRANT ALL PRIVILEGES ON banking_system.* TO 'root'@'localhost';
+    FLUSH PRIVILEGES;
+    EXIT;
+
+4️⃣ (Optional) Verify:
+    SHOW DATABASES;
+
+-----------------------------------
+Linux (Ubuntu / Debian / Arch etc.)
+-----------------------------------
+1️⃣ Install MySQL (if missing):
+    sudo apt update
+    sudo apt install mysql-server
+    sudo systemctl enable mysql
+    sudo systemctl start mysql
+
+2️⃣ Log in:
+    sudo mysql -u root
+
+3️⃣ Create database:
+    CREATE DATABASE banking_system;
+    GRANT ALL PRIVILEGES ON banking_system.* TO 'root'@'localhost';
+    FLUSH PRIVILEGES;
+    EXIT;
+
+-------------------------
+Change Application Port:
+-------------------------
+If port 8080 is used:
+  Edit file: src/main/resources/application.properties
+  Add:
+    server.port=9090
+
+-------------------------
+Start Application:
+-------------------------
+Back to project folder → run:
+    mvn spring-boot:run
+
+Open browser:
+    http://localhost:8080

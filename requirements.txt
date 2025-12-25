@@ -1,0 +1,15 @@
+Project Requirements
+---------------------------------
+
+Required Software:
+  - Java JDK 17 
+  - Maven 3.8+ 
+  - MySQL Server 8.0+ 
+  - MySQL Command Line Client 
+
+
+Verify Installations:
+  Run in terminal / cmd:
+    java -version          → must show Java 17
+    mvn -v                 → must show Maven
+    mysql --version        → must show MySQL 9.x
