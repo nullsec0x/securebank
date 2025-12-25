@@ -1,3 +1,0 @@
-CREATE DATABASE IF NOT EXISTS banking_system;
-GRANT ALL PRIVILEGES ON banking_system.* TO 'root'@'%' IDENTIFIED BY 'password';
-FLUSH PRIVILEGES;
