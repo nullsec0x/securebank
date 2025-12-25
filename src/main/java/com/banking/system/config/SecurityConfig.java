@@ -47,7 +47,7 @@ public class SecurityConfig {
             
             return new org.springframework.security.core.userdetails.User(
                     user.getUsername(),
-                    user.getPassword(), // Already BCrypt encoded from UserService
+                    user.getPassword(),
                     Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()))
             );
         };
