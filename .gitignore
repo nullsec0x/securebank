@@ -51,3 +51,20 @@ buildNumber.properties
 # Temporary files
 tmp/
 temp/
+
+# Local override files
+application-local.properties
+
+# Secrets
+*-prod.properties
+.env
+*.env
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml
