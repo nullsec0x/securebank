@@ -121,14 +121,12 @@
                     Welcome, <span th:text="${user.username}"></span>
                 </h2>
                 
-                <!-- Accounts -->
                 <div class="row mb-4">
                     <div th:each="account : ${accounts}" class="col-md-4 mb-3">
                         <div class="card account-card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-start mb-2">
                                     <h6 class="card-subtitle text-muted">Account Number</h6>
-                                    <!-- DELETE ACCOUNT BUTTON -->
                                     <form th:action="@{/user/delete-account}" method="post" 
                                           onsubmit="return confirm('Delete account ${account.accountNumber}?')">
                                         <input type="hidden" name="accountId" th:value="${account.id}">
@@ -155,7 +153,6 @@
                     </div>
                 </div>
                 
-                <!-- Transactions -->
                 <div class="card bank-card">
                     <div class="card-header bg-white border-0 py-3">
                         <h5 class="mb-0 fw-semibold">Recent Transactions</h5>
