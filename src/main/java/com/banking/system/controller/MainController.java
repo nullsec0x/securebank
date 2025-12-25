@@ -172,7 +172,6 @@ public class MainController {
         return "redirect:/admin/dashboard";
     }
     
-    // ADD THIS METHOD: Delete user
     @PostMapping("/admin/delete-user")
     public String deleteUser(@RequestParam Long userId, RedirectAttributes redirectAttributes) {
         try {
@@ -184,7 +183,6 @@ public class MainController {
         return "redirect:/admin/dashboard";
     }
     
-    // ADD THIS METHOD: Delete account
     @PostMapping("/user/delete-account")
     public String deleteAccount(@RequestParam Long accountId, RedirectAttributes redirectAttributes) {
         try {
